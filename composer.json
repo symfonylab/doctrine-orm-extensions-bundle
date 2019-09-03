@@ -1,0 +1,30 @@
+{
+    "name": "symfonylab/doctrine-orm-extensions-bundle",
+    "type": "symfony-bundle",
+    "description": "symfony bundle",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.2",
+        "symfony/framework-bundle": "^4.1",
+        "doctrine/doctrine-bundle": "^1.9",
+        "doctrine/orm": "^2.6",
+        "symfony/security": "^4.1",
+        "symfony/form": "^4.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SymfonyLab\\DoctrineOrmExtensionsBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SymfonyLab\\DoctrineOrmExtensionsBundle\\Tests\\": "Tests/"
+        }
+    }
+}

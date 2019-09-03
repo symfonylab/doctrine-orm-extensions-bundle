@@ -1,0 +1,15 @@
+
+###> symfony/framework-bundle ###
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpstorm files ###
+.idea/
+###< phpstorm files ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+.composer.lock
