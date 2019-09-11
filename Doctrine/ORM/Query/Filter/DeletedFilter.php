@@ -9,12 +9,11 @@ class DeletedFilter extends SQLFilter
 {
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias)
     {
-        if ($targetEntity->hasField("deletedAt")) {
-            $date = date(DATE_ATOM);
-
-            return $targetTableAlias . ".deleted_at > '" . $date . "' OR " . $targetTableAlias . ".deleted_at IS NULL";
+        if ($targetEntity->hasField('deletedAt')) {
+            $field = $targetTableAlias . '.' . $targetEntity->getColumnName('deletedAt');
+            return $field . ' > now() OR ' . $field . ' IS NULL';
         }
 
-        return "";
+        return '';
     }
 }
