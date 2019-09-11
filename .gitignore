@@ -13,3 +13,6 @@
 ###< symfony/phpunit-bridge ###
 
 .composer.lock
+
+/.php_cs
+/.php_cs.cache

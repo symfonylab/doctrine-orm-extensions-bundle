@@ -6,9 +6,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
+use PHPUnit\Framework\TestCase;
 use SymfonyLab\DoctrineOrmExtensionsBundle\Doctrine\MutableListener;
 use SymfonyLab\DoctrineOrmExtensionsBundle\Entity\MutableInterface;
-use PHPUnit\Framework\TestCase;
 
 class MutableListenerTest extends TestCase
 {

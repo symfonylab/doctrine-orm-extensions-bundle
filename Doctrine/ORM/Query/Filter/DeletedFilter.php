@@ -10,8 +10,9 @@ class DeletedFilter extends SQLFilter
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias)
     {
         if ($targetEntity->hasField('deletedAt')) {
-            $field = $targetTableAlias . '.' . $targetEntity->getColumnName('deletedAt');
-            return $field . ' > now() OR ' . $field . ' IS NULL';
+            $field = $targetTableAlias.'.'.$targetEntity->getColumnName('deletedAt');
+
+            return $field.' > now() OR '.$field.' IS NULL';
         }
 
         return '';

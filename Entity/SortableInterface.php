@@ -2,7 +2,6 @@
 
 namespace SymfonyLab\DoctrineOrmExtensionsBundle\Entity;
 
-
 interface SortableInterface
 {
     public function getPosition(): ?int;

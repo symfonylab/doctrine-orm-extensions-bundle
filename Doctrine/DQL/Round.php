@@ -13,15 +13,13 @@ class Round extends FunctionNode
 
     public function getSql(SqlWalker $sqlWalker)
     {
-
-        return 'ROUND(' . $sqlWalker->walkSimpleArithmeticExpression(
+        return 'ROUND('.$sqlWalker->walkSimpleArithmeticExpression(
                 $this->arithmeticExpression
-            ) . ')';
+            ).')';
     }
 
     public function parse(Parser $parser)
     {
-
         $lexer = $parser->getLexer();
 
         $parser->match(Lexer::T_IDENTIFIER);
@@ -31,5 +29,4 @@ class Round extends FunctionNode
 
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
-
 }
