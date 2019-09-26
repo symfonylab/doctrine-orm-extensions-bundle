@@ -3,7 +3,7 @@
 namespace SymfonyLab\DoctrineOrmExtensionsBundle\Doctrine;
 
 use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use SymfonyLab\DoctrineOrmExtensionsBundle\Entity\MutableInterface;
@@ -44,9 +44,10 @@ class MutableListener implements EventSubscriber
         $em->getUnitOfWork()->recomputeSingleEntityChangeSet($meta, $entity);
     }
 
-    private function checkAndSetEmbeddedFields(EntityManager $em, ClassMetadata $meta, MutableInterface $entity)
+    private function checkAndSetEmbeddedFields(EntityManagerInterface $em, ClassMetadata $meta, MutableInterface $entity)
     {
         $changeSet = $em->getUnitOfWork()->getEntityChangeSet($entity);
+        if (empty($changeSet)) return;
         $changed = array_map(function ($f) {
             [$field,] = explode('.', $f);
 
