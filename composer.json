@@ -5,9 +5,8 @@
     "license": "proprietary",
     "require": {
         "php": ">=7.2",
-        "symfony/framework-bundle": "^4.3",
-        "doctrine/doctrine-bundle": "^1.9",
-        "doctrine/orm": "^2.6"
+        "symfony/framework-bundle": "5.0.*",
+        "symfony/orm-pack": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.2"
