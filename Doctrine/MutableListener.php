@@ -22,7 +22,7 @@ class MutableListener implements EventSubscriber
             return;
         }
 
-        $entity->setCreatedAt(new \DateTimeImmutable());
+        $entity->setCreatedAt($entity->getCreatedAt() ?: new \DateTimeImmutable());
         $entity->setUpdatedAt(new \DateTimeImmutable());
     }
 
